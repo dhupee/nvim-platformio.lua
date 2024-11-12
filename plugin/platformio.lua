@@ -1,8 +1,14 @@
 -- Pioinit
-vim.api.nvim_create_user_command("Pioinit", require("platformio.pioinit").pioinit(), {})
+vim.api.nvim_create_user_command(
+  "Pioinit",
+  function()
+    require("platformio.pioinit").pioinit()
+  end,
+  {}
+)
 
 -- Piodb
-vim.api.nvim_create_user_command("Piodb", require("platformio.piodb").piodb(), {})
+-- vim.api.nvim_create_user_command("Piodb", require("platformio.piodb").piodb(), {})
 
 -- Piorun
 vim.api.nvim_create_user_command("Piorun", function(opts)
