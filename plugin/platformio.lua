@@ -28,8 +28,13 @@ end, {
 })
 
 -- Piomon
-vim.api.nvim_create_user_command("Piomon", function()
-	require("platformio.piomon").piomon()
+vim.api.nvim_create_user_command("Piomon", function(opts)
+	local args = opts.args
+	if args == 0 then
+		require("platformio.piomon").piomon(0)
+	else
+		require("platformio.piomon").piomon(args)
+	end
 end, {})
 
 -- Piolib
