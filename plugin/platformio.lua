@@ -49,3 +49,14 @@ end, {
 })
 
 -- TODO:: implement Piodebug and Pioterm
+
+--Piocmd
+vim.api.nvim_create_user_command("Piocmd", function(opts)
+	-- Split the args into a table
+	local cmd_table = vim.split(opts.args, " ")
+
+	-- Call the piolib function with the arguments
+	require("platformio.pioterm").piocmd(cmd_table)
+end, {
+	nargs = "+", -- means can take another argument
+})
