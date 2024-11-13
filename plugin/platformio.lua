@@ -48,8 +48,6 @@ end, {
 	nargs = "+", -- means can take another argument
 })
 
--- TODO:: implement Piodebug and Pioterm
-
 -- Piocmd
 vim.api.nvim_create_user_command("Piocmd", function(opts)
 	-- Split the args into a table
